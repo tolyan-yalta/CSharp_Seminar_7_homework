@@ -17,7 +17,7 @@ Console.WriteLine("Задайте минимальное и максимальн
 int min = Convert.ToInt32(Console.ReadLine());
 int max = Convert.ToInt32(Console.ReadLine());
 
-int[,] matrix = new int[M, N];
+int[,] matrix = new int[rows, columns];
 
 for(int i = 0; i < matrix.GetLength(0); i++)
 {
