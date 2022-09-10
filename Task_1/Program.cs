@@ -3,31 +3,30 @@
 
 double random_number(int min, int max)
 {
-    //int temp = ;
     double number = new Random().Next(min, max) + new Random().NextDouble();
     return number;
 }
 
 
-Console.WriteLine("Задайте двумерный массив, введите M и N: ");
-int M = Convert.ToInt32(Console.ReadLine());
-int N = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Задайте двумерный массив, введите количество строк и столбцов: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+int columns = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("Задайте минимальное и максимальное значение для генерации чисел: ");
 int min = Convert.ToInt32(Console.ReadLine());
 int max = Convert.ToInt32(Console.ReadLine());
 
 
-double[,] matrix = new double[M, N];
+double[,] matrix = new double[rows, columns];
 
 
 
-for(int rows = 0; rows < matrix.GetLength(0); rows++)
+for(int i = 0; i < matrix.GetLength(0); i++)
 {
-    for(int columns = 0; columns < matrix.GetLength(1); columns++)
+    for(int j = 0; j < matrix.GetLength(1); j++)
     {
-        matrix[rows, columns] = random_number(min, max);
-        Console.Write($"\t{matrix[rows, columns]} ");
+        matrix[i, j] = random_number(min, max);
+        Console.Write($"\t{matrix[i, j]} ");
     }
     Console.WriteLine();
 }
